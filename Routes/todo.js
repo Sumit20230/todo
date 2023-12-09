@@ -1,0 +1,12 @@
+const express=require('express');
+const router=express.Router();
+const {createTodo}=require('../Controller/createTodo');
+router.post("/createTodo",createTodo);
+const {getTodo,getTodobyId}=require('../Controller/getTofo');
+const {updateTodo}=require('../Controller/updateTodo');
+const { deleteTodo } = require('../Controller/deleteTodo');
+router.delete("/deleteTodo/:id",deleteTodo);
+router.get("/getTodo",getTodo);
+router.get("/getTodo/:id",getTodobyId);
+router.put("/updateTodo/:id",updateTodo);
+module.exports=router;
